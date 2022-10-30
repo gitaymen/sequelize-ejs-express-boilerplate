@@ -3,8 +3,6 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
-// loggers
-const morgan = require("morgan");
 
 // routes imports
 const indexRouter = require("./routes/index");
@@ -16,9 +14,11 @@ const app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-// loggers
-app.use(morgan("dev"));
-
+// http logger
+if (process.env.MORGAN === "true") {
+  const morgan = require("morgan");
+  app.use(morgan("dev"));
+}
 
 // middlewares
 app.use(bodyParser.json());

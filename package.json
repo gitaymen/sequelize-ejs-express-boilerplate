@@ -2,10 +2,12 @@
   "name": "sequelize-ejs-express-boilerplate",
   "version": "0.0.0",
   "private": true,
+  "author": "Boumegoura Aymen",
+  "repository": "https://github.com/gitaymen/sequelize-ejs-express-boilerplate.git",
   "scripts": {
     "start": "nodemon ./bin/www",
-    "dev:init": "sequelize db:migrate",
-    "dev:seed": "sequelize db:seed:all",
+    "init": "sequelize db:migrate",
+    "seed": "sequelize db:seed:all",
     "dev:reset": "del .\\database\\dev\\db.sqlite",
     "prod:reset": "del .\\database\\prod\\db.sqlite"
   },
