@@ -1,0 +1,65 @@
+<div
+  class="w-screen h-screen flex justify-center items-center bg-gradient-to-br from-purple-700 to-amber-700"
+>
+  <form
+    class="p-10 bg-white rounded-xl drop-shadow-lg space-y-5"
+    action="/users"
+    method="post"
+  >
+    <h1 class="text-center text-3xl">Create New User.</h1>
+    <div class="flex flex-col space-y-2">
+      <label class="text-sm font-light" for="firstname">Firstname</label>
+      <input
+        class="w-96 px-3 py-2 rounded-md border border-slate-400"
+        type="text"
+        placeholder="Firstname"
+        name="firstname"
+        id="firstname"
+      />
+    </div>
+    <div class="flex flex-col space-y-2">
+      <label class="text-sm font-light" for="lastname">Lastname</label>
+      <input
+        class="w-96 px-3 py-2 rounded-md border border-slate-400"
+        type="text"
+        placeholder="Lastname"
+        name="lastname"
+        id="lastname"
+      />
+    </div>
+    <div class="flex flex-col space-y-2">
+      <label class="text-sm font-light" for="username">Username</label>
+      <input
+        class="w-96 px-3 py-2 rounded-md border border-slate-400"
+        type="text"
+        placeholder="Username"
+        name="username"
+        id="username"
+      />
+    </div>
+    <div class="flex flex-col space-y-2">
+      <label class="text-sm font-light" for="password">Password</label>
+      <input
+        class="w-96 px-3 py-2 rounded-md border border-slate-400"
+        type="password"
+        placeholder="Password"
+        name="password"
+        id="password"
+      />
+    </div>
+
+    <button
+      class="w-full px-10 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500 hover:drop-shadow-md duration-300 ease-in"
+      type="submit"
+    >
+      Register
+    </button>
+
+    <p class="text-right">
+      Have an account?
+      <a class="text-blue-600 text-sm font-light hover:underline" href="/login"
+        >Log in.</a
+      >
+    </p>
+  </form>
+</div>

@@ -5,7 +5,7 @@
  */
 require("dotenv").config();
 const app = require("../app");
-const debug = require("debug")("sequelize-ejs-express-boilerplate:server");
+const debug = require("debug")(`${process.env.APP_NAME}:server`);
 const http = require("http");
 
 /**

@@ -1,0 +1,70 @@
+{
+  name: 'SequelizeUniqueConstraintError',
+  errors: [
+    ValidationErrorItem {
+      message: 'username must be unique',
+      type: 'unique violation',
+      path: 'username',
+      value: 'sys',
+      origin: 'DB',
+      instance: User {
+        dataValues: {
+          id: null,
+          firstname: 'Aymen',
+          lastname: 'BIG',
+          username: 'sys',
+          password: '$2b$10$HEUM4vl.FDSDGtuv7LmyuOxNDk61VA4WV/55u4d/NwlskN5DdhPza',
+          updatedAt: 2022-11-14T19:28:03.332Z,
+          createdAt: 2022-11-14T19:28:03.332Z
+        },
+        _previousDataValues: {
+          firstname: undefined,
+          lastname: undefined,
+          username: undefined,
+          password: undefined
+        },
+        uniqno: 1,
+        _changed: Set(4) { 'firstname', 'lastname', 'username', 'password' },
+        _options: {
+          isNewRecord: true,
+          _schema: null,
+          _schemaDelimiter: '',
+          attributes: undefined,
+          include: undefined,
+          raw: undefined,
+          silent: undefined
+        },
+        isNewRecord: true
+      },
+      validatorKey: 'not_unique',
+      validatorName: null,
+      validatorArgs: []
+    }
+  ],
+  parent: [Error: SQLITE_CONSTRAINT: UNIQUE constraint failed: Users.username] {
+    errno: 19,
+    code: 'SQLITE_CONSTRAINT',
+    sql: 'INSERT INTO `Users` (`id`,`firstname`,`lastname`,`username`,`password`,`createdAt`,`updatedAt`) VALUES (NULL,$1,$2,$3,$4,$5,$6);'
+  },
+  original: [Error: SQLITE_CONSTRAINT: UNIQUE constraint failed: Users.username] {
+    errno: 19,
+    code: 'SQLITE_CONSTRAINT',
+    sql: 'INSERT INTO `Users` (`id`,`firstname`,`lastname`,`username`,`password`,`createdAt`,`updatedAt`) VALUES (NULL,$1,$2,$3,$4,$5,$6);'
+  },
+  fields: [ 'username' ],
+  sql: 'INSERT INTO `Users` (`id`,`firstname`,`lastname`,`username`,`password`,`createdAt`,`updatedAt`) VALUES (NULL,$1,$2,$3,$4,$5,$6);',
+  level: 'error',
+  service: 'user controller',
+  timestamp: '2022-11-14 20:28:03',
+  message: 'Validation error',
+  stack: 'Error\n' +
+    '    at Database.<anonymous> (D:\\NodeProjects\\quickstart\\node_modules\\sequelize\\lib\\dialects\\sqlite\\query.js:179:27)\n' +
+    '    at D:\\NodeProjects\\quickstart\\node_modules\\sequelize\\lib\\dialects\\sqlite\\query.js:177:50\n' +
+    '    at new Promise (<anonymous>)\n' +
+    '    at Query.run (D:\\NodeProjects\\quickstart\\node_modules\\sequelize\\lib\\dialects\\sqlite\\query.js:177:12)\n' +
+    '    at D:\\NodeProjects\\quickstart\\node_modules\\sequelize\\lib\\sequelize.js:314:28\n' +
+    '    at async SQLiteQueryInterface.insert (D:\\NodeProjects\\quickstart\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:308:21)\n' +
+    '    at async User.save (D:\\NodeProjects\\quickstart\\node_modules\\sequelize\\lib\\model.js:2432:35)\n' +
+    '    at async User.create (D:\\NodeProjects\\quickstart\\node_modules\\sequelize\\lib\\model.js:1344:12)\n' +
+    '    at async store (D:\\NodeProjects\\quickstart\\controllers\\users.js:30:18)'
+}
